@@ -2,32 +2,34 @@
 	
 	class Student extends CI_Controller
 	{
+		var $template = 'student';
+		var $title 	  =	'Quản lý sinh viên';
 		
 		public function __construct()
 		{
 			parent::__construct();
-			$this->load->model('student/m_student_table','tblST');
+			$this->load->model('student/m_student_table');
+			$this->load->helper('url');
 
 		}
 
 		public function index()
 		{
-			echo "Welcome to IUH";
+			echo "welcome to iuh";
 		}
 
 		public function liststudent()
 		{
-			$listofstudent = $this->tblST->getStudent();
-			var_dump($listofstudent);
+			$listofstudent = $this->m_student_table->getStudent();
+			$data['listofstudent'] = $listofstudent;
+			$data['path'] = array('student/dashboard/v_index');
+			$this->load->view('student/v_studentmasterlayout',$data);
 		}
 
 		public function addstudent()
 		{
-			$this->load->model('student/m_student_table','tblST');
-			$resultadd = $this->tblST->addStudent();
-			$data['viewadd'] = $resultadd;
-			$this->load->view('student/v_addstudent',$data);
-
+			$data['path'] = array('student/dashboard/v_add');
+			$this->load->view('student/v_studentmasterlayout',$data);	
 		}
 		public function editstudent()
 		{

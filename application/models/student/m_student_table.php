@@ -5,17 +5,16 @@
 		
 		public function getStudent()
 		{
-			$query = $this->db->query("SELECT * FROM tbl_student");
-			if ($query->num_rows() >0 )
+			$query = $this->db->query('SELECT * FROM tbl_student');
+			if ($query->num_rows()>0)
 				return $query->result_array();
-			return false;
+			return false;	
 		}
 		public function addStudent()
 		{
-			$query = $this->db->query('select * from tbl_student where id=?',array($id));
-			if ($query->num_rows() >0 )
-				return $query->row_array();
-			return false;
+			$stringsql = "INSERT INTO `tbl_student`(`id`, `name`, `classID`, `age`, `gender`, `address`, `phone`, `email`, `password`) VALUES ([value-1],[value-2],[value-3],[value-4],[value-5],[value-6],[value-7],[value-8],[value-9])";
+			
+
 		}
 		public function eStudent()
 		{
