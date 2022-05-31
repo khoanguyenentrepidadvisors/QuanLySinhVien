@@ -56,3 +56,8 @@ $route['translate_uri_dashes'] = FALSE;
 
 
 $route['api/sinhvien'] = 'api/ApiSinhvienController/index';
+$route['api/student/store'] = 'api/ApiStudentController/storeStudent';
+$route['api/student/edit/(:any)'] = 'api/ApiStudentController/findStudent/$1';
+$route['api/student/update/(:any)'] = 'api/ApiStudentController/updateStudent/$1';
+
+$route['api/student/delete/(:any)'] = 'api/ApiStudentController/deleteStudent/$1';

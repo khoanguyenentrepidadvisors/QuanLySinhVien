@@ -8,7 +8,7 @@
 	class ApiSinhvienController extends RestController
 	{
 		public function index_get(){
-			echo "restful";
+			echo "restful được rồi";
 		}
 	}
 ?>
